@@ -21,7 +21,9 @@ header {
 nav {
     width: 100%;
     height: 100px;
+    background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
 }
 
 .container {
@@ -81,14 +83,11 @@ nav .nav-right {
 /* ------------------------------ SLIDER */
 
 #slider {
-    padding-top: 100px;
-    box-shadow: 0px 12px 10px -12px rgba(0, 0, 0, 0.2) inset;
-}
-
-#slider .wrapper {
     width: 100%;
     height: 100%;
     display: flex;
+    box-shadow: 0px 12px 10px -12px rgba(0, 0, 0, 0.2) inset;
+    padding-top: 100px;
 }
 
 #slider .prev {
@@ -97,6 +96,8 @@ nav .nav-right {
     justify-content: center;
     align-items: center;
     transition: 0.4s;
+    background-color: #3333;
+    user-select: none;
 }
 
 #slider .prev:hover {
@@ -107,13 +108,14 @@ nav .nav-right {
 
 #slider .images {
     width: 90%;
+    overflow-y: hidden;
     display: flex;
     justify-content: center;
 }
 
 .images img {
-    max-width: 100%;
-    max-height: 500px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: none;
 }
@@ -128,6 +130,8 @@ nav .nav-right {
     justify-content: center;
     align-items: center;
     transition: 0.4s;
+    background-color: #3333;
+    user-select: none;
 }
 
 #slider .next:hover {

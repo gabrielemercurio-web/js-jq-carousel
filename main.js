@@ -1,4 +1,44 @@
-// Costruire uno Slider con immagini che scorrono cliccando sulle freccie
+
+// Ogni 3 secondi le slide si alternano
+
+function slideSwitch(){
+
+    var img_corrente = $('.visible');
+    img_corrente.removeClass('visible');
+    img_successiva = img_corrente.next('img');
+
+    if (img_successiva.length != 0) {
+        img_successiva.addClass('visible');
+    } else {
+        img_successiva = $('img:first-child');
+        img_successiva.addClass('visible');
+    }
+};
+
+var theInterval;
+
+function startSlide() {
+    theInterval = setInterval(slideSwitch, 3000);
+}
+
+function stopSlide() {
+    clearInterval(theInterval);
+}
+
+$(function () {
+    startSlide();
+    $(".images").hover(
+        function () {
+            stopSlide();
+        },
+        function () {
+            startSlide();
+        }
+    );
+});
+
+// Costruire uno Slider con immagini che scorrono
+// cliccando sulle freccie
 
 // intercettare il click sulla classe .next
 $('.next').click(function () {
@@ -35,21 +75,6 @@ $('.prev').click(function () {
         img_precedente.addClass('visible');
     }
 })
-
-// Ogni 3 secondi le slide si alternano
-
-var clock = setInterval(function(){
-    var img_corrente = $('.visible');
-    img_corrente.removeClass('visible');
-    img_successiva = img_corrente.next('img');
-
-    if (img_successiva.length != 0) {
-        img_successiva.addClass('visible');
-    } else {
-        img_successiva = $('img:first-child');
-        img_successiva.addClass('visible');
-    }
-}, 3000);
 
 
 

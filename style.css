@@ -113,6 +113,10 @@ nav .nav-right {
     justify-content: center;
 }
 
+#slider .images:hover {
+    cursor: pointer;
+}
+
 .images img {
     width: 100%;
     height: 100%;

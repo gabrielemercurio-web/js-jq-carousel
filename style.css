@@ -154,10 +154,15 @@ nav .nav-right {
 }
 
 .bullets i {
-    cursor: pointer;
     margin: 0 5px;
     border: 1px solid #fff;
     border-radius: 50%;
+}
+
+.bullets i:hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+    color: #888;
 }
 
 .bullets i.visible {
@@ -207,6 +212,9 @@ nav .nav-right {
     text-decoration: none;
 }
 
+
+
+/* ************* MEDIA QUERY ************ */
 
 @media screen and (max-width: 1260px) {
     .nav-right ul {

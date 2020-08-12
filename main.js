@@ -101,13 +101,43 @@ $('.prev').click(function () {
     }
 })
 
+// Click sui pallini per selezionale la slide relativa
+$('.bullets .fa-circle').click(function() {
+    // recupero l'immagine corrente
+    var immagine_corrente = $('img.visible');
+
+    // recupero il pallino corrente
+    var pallino_corrente = $('.fa-circle.visible');
+
+    // Elimino la classe visible all'immagine corrente
+    immagine_corrente.removeClass('visible');
+
+    // Elimino la classe visible al pallino corrente
+    pallino_corrente.removeClass('visible');
+
+    // Aggiungo la classe visible al pallino su cui l'utente ha cliccato
+    $(this).addClass('visible');
+
+    // Recupero l'immagine corrispondente al pallino su cui l'utente ha cliccato
+    // Recupero la posizione del pallino su cui l'utente ha cliccato
+    var posizione = $(this).index();
+
+    // Recupero l'immagine con la stessa posizione del pallino
+    var nuova_immagine = $('.images img').eq(posizione);
+
+    // Aggiungo la classe visible all'immagine recuperata
+    nuova_immagine.addClass('visible');
+});
+
 // Hamburger Menu OPEN e CLOSE
 $(".fa-bars").click(function () {
   $(".hamburger-menu").addClass("active");
+  $('.images').hide();
 });
 
 $(".fa-times").click(function () {
   $(".hamburger-menu").removeClass("active");
+  $('.images').show();
 });
 
 
